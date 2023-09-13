@@ -1,6 +1,10 @@
 import Image from 'next/image'
+import Link from 'next/link'
+import { random } from 'lodash-es'
 
-export default function Home() {
+export default function Welcome() {
+  const userId = random(100, 999)
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
@@ -107,6 +111,7 @@ export default function Home() {
             Instantly deploy your Next.js site to a shareable URL with Vercel.
           </p>
         </a>
+        <Link href={`/user/${userId}`}>User ID {userId}</Link>
       </div>
     </main>
   )
